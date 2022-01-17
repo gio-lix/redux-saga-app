@@ -1,4 +1,4 @@
-import { actionTypes } from './actions'
+import { actionTypes } from '../actions'
 import { HYDRATE } from 'next-redux-wrapper'
 
 const initialState = {
@@ -12,9 +12,9 @@ const initialState = {
 
 export const fetchDataReducer = (state = initialState, action) => {
     switch (action.type) {
-        case HYDRATE: {
-            return { ...state, ...action.payload }
-        }
+        // case HYDRATE: {
+        //     return { ...state, ...action.payload }
+        // }
         case actionTypes.LOAD_DATA_SUCCESS_ID:
             return {...state, ...{placeholderDataById: action.data}}
         case actionTypes.LOAD_DATA_SUCCESS:

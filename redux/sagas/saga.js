@@ -1,6 +1,6 @@
 import { all, call, delay, put,takeEvery, take, takeLatest } from 'redux-saga/effects'
-import { actionTypes, failure, loadDataSuccess, tickClock } from './actions'
-import {getUserPost} from "../pages/api";
+import { actionTypes, failure, loadDataSuccess } from '../actions'
+import {getUserPost} from "../../pages/api";
 
 
 
