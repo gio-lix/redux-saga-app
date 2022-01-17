@@ -1,0 +1,60 @@
+import { actionTypes } from './actions'
+import { HYDRATE } from 'next-redux-wrapper'
+
+const initialState = {
+    // count: 0,
+    // error: false,
+    // lastUpdate: 0,
+    // light: false,
+    placeholderData: null,
+    placeholderDataById: null,
+}
+
+export const fetchDataReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case HYDRATE: {
+            return { ...state, ...action.payload }
+        }
+        case actionTypes.LOAD_DATA_SUCCESS_ID:
+            return {...state, ...{placeholderDataById: action.data}}
+        case actionTypes.LOAD_DATA_SUCCESS:
+            return {
+                ...state,
+                ...{ placeholderDataById: action.data },
+            }
+        // case actionTypes.FAILURE:
+        //     return {
+        //         ...state,
+        //         ...{ error: action.error },
+        //     }
+        //
+        // case actionTypes.INCREMENT:
+        //     return {
+        //         ...state,
+        //         ...{ count: state.count + 1 },
+        //     }
+        //
+        // case actionTypes.DECREMENT:
+        //     return {
+        //         ...state,
+        //         ...{ count: state.count - 1 },
+        //     }
+        //
+        // case actionTypes.RESET:
+        //     return {
+        //         ...state,
+        //         ...{ count: initialState.count },
+        //     }
+
+
+
+        // case actionTypes.TICK_CLOCK:
+        //     return {
+        //         ...state,
+        //         ...{ lastUpdate: action.ts, light: !!action.light },
+        //     }
+
+        default:
+            return state
+    }
+}
